@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import { useRouter } from 'next/router';
 
-export default ({ children, title = 'Next.js Ecommerce' }) => {
+export default ({ children, title = 'Hermes Хүссэн бүхнээ нэг дор' }) => {
   const router = useRouter();
   const pathname = router.pathname;
 

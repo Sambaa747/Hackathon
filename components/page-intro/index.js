@@ -1,35 +1,39 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {EffectFade, Navigation} from 'swiper';
+import { useState, useRef } from 'react';
+
+import useOnClickOutside from 'use-onclickoutside';
+
 
 SwiperCore.use([EffectFade, Navigation]);
 
 const PageIntro = () => {
+ 
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  const searchRef = useRef(null);
+
+  const closeSearch = () => {
+    setSearchOpen(false);
+  }
+  useOnClickOutside(searchRef, closeSearch);
 
   return (
     <section className="page-intro">  
-      <Swiper navigation effect="fade" className="swiper-wrapper">
-        <SwiperSlide>
-          <div className="page-intro__slide" style={{ backgroundImage: "url('/images/slide-1.jpg')" }}>
+          <div className="page-intro__slide" style={{ background: "url('images/banner/gradient.gif')" }}>
             <div className="container">
               <div className="page-intro__slide__content">
-                <h2>Sale of the summer collection</h2>
-                <a href="#" className="btn-shop"><i className="icon-right"></i>Shop now</a>
+                <h3>Худалдан авах бараа бүтээгдэхүүнийхээ үнийн харьцуулалтыг нэг дороос хийх боломж ...</h3>
+                <button ref={searchRef} className={`search-form-wrapper ${searchOpen ? 'search-form--active' : ''}`}>
+                  <form className={`search-form`}>
+                      <i className="icon-cancel" onClick={() => setSearchOpen(!searchOpen)}></i>
+                      <input type="text" name="search" placeholder="Хайх гэж буй бүтээгдэхүүнээ бичнэ үү" />
+                  </form>  
+                  <a href="#" className="btn-shop"><i onClick={() => setSearchOpen(!searchOpen)}  className="icon-search"></i></a>
+          </button>
               </div>
             </div>
           </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="page-intro__slide" style={{ backgroundImage: "url('/images/slide-2.jpg')" }}>
-            <div className="container">
-              <div className="page-intro__slide__content">
-                <h2>Make your house into a home</h2>
-                <a href="#" className="btn-shop"><i className="icon-right"></i>Shop now</a>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+    
 
       <div className="shop-data">
         <div className="container">
