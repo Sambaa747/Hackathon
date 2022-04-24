@@ -3,11 +3,10 @@ const Subscribe = () => {
     <section className="subscribe">
       <div className="container">
         <div style={{backgroundImage: 'url(/images/subscribe.jpg)'}} className="subscribe__content">
-          <h4>Subscribe to our newsletter and receive exclusive offers every week</h4>
+          <h4>Системд бүртгүүлснээр форумаар бусад хэрэглэгчидтэй бүтээгдэхүүний талаар санал бодлоо хуваалцах боломжтой.</h4>
 
           <form className="subscribe__form">
-            <input type="email" placeholder="Email address" />
-            <button type="submit" className="btn btn--rounded btn--yellow">Subscribe</button>
+            <button type="submit" className="btn btn--rounded btn--purple">Бүртгүүлэх</button>
           </form>
         </div>
       </div>

@@ -52,7 +52,7 @@ const Header = ({ isErrorPage }) => {
           <Link href="/products">
             <a>Бэлэн багц</a>
           </Link>
-          <a href="#">Таны Карт</a>
+          <a href="#">Мэдээ, мэдээлэл</a>
           <a href="#">Форум</a>
           <button className="site-nav__btn"><p>Миний аккаунт</p></button>
         </nav>

@@ -1,7 +1,7 @@
 :root {
   // fonts
-  --main-font: 'Poppins';
-  --font-title: 'Archivo';
+  --main-font: 'Roboto';
+  --font-title: 'Roboto';
 
   // colors
   --color-orange: #FBB03B;
@@ -11,6 +11,8 @@
   --color-white: #FFFFFF;
   --color-gray: #706c61;
   --color-red: #FF0000;
+  --color-purple: #C15AA9;
+
 }
 
 @mixin inputPlaceholder() {

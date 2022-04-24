@@ -285,7 +285,7 @@ h5 {
 }
 
 .btn {
-  color: #000000;
+  color: #fff;
   cursor: pointer;
 
   &.btn--rounded {
@@ -307,8 +307,8 @@ h5 {
       border: 1px solid #d8d8d8;
     }
 
-    &.btn--yellow {
-      background-color: var(--color-orange);
+    &.btn--purple {
+      background-color: var(--color-purple);
     }
   }
 }
@@ -525,20 +525,20 @@ h5 {
       color: #000;
     }
   }
+}
+.search-form-wrapper {
+  &.search-form--active {
+    .search-form {
+      top: 0;
 
-  .search-form-wrapper {
-    &.search-form--active {
-      .search-form {
-        top: 0;
 
+      @include breakpoint(tablet-lg) {
+        top: auto;
+      }
+
+      input {
         @include breakpoint(tablet-lg) {
-          top: auto;
-        }
-
-        input {
-          @include breakpoint(tablet-lg) {
-            border: 1px solid #ababab;
-          }
+          border: 1px solid #ababab;
         }
       }
     }
@@ -552,9 +552,10 @@ h5 {
   .search-form {
     position: fixed;
     z-index: 100;
-    top: -100vh;
+    top: 100vh;
     left: 0;
     height: 100vh;
+    width: 100px;
     right: 0;
     transition: all 0.3s ease;
     background-color: #fff;
@@ -584,9 +585,9 @@ h5 {
       font-size: 13px;
       position: absolute;
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-bottom: 1px solid black;
+      left: 0%;
+      transform: translate(0);
+      border-bottom: 1px solid rgb(172, 80, 172);
       transition: all 0.3s ease;
       background-color: transparent;
 
@@ -598,7 +599,7 @@ h5 {
         width: 0;
         top: 50%;
         left: auto;
-        right: -9px;
+        right: auto;
         border: none;
         border-radius: 50px;
         margin-top: -21px;
@@ -623,7 +624,7 @@ h5 {
     }
 
     i {
-      color: #000 !important;
+      color: rgb(252, 249, 249) !important;
       z-index: 10;
     }
   }
@@ -631,79 +632,16 @@ h5 {
 
 .page-intro {
   position: relative;
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    bottom: 20px;
-    top: auto;
-    transform: translateX(50%);
-    right: 14%;
-    left: auto;
-    width: 42px;
-    height: 42px;
-    z-index: 100;
-    font-size: 13px;
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    display: none;
-    background-color: rgba(255, 255, 255, 0.12);
-
-    @include breakpoint(phone) {
-      width: 52px;
-      height: 52px;
-      bottom: 30px;
-      font-size: 17px;
-      display: flex;
-    }
-
-    @include breakpoint(tablet-lg) {
-      width: 72px;
-      height: 72px;
-      bottom: 30px;
-      font-size: 21px;
-      display: flex;
-    }
-
-    &:before {
-      color: #fff;
-      content: "\e80b";
-      font-family: "icons";
-    }
-
-    &:hover {
-      background: #fff;
-
-      &:before {
-        color: #000;
-      }
-    }
-  }
-
-  .swiper-button-next {
-    right: 20px;
-
-    @include breakpoint(phone) {
-      right: 7%;
-    }
-
-    &:before {
-      content: "\e811";
-    }
-  }
-
-  .swiper-pagination-progressbar {}
+  justify-content: center;
 
   .shop-data {
     bottom: 0;
-    left: 0;
-    width: 80%;
-    z-index: 99;
-    display: none;
+    width: 70%;
+    height: 10%;
+    display: table-cell;
     position: absolute;
-    padding: 36px 30px 30px 30px;
+    padding: 30px 30px 0px 30px ;
+    margin-left: 15%;
 
     @include breakpoint(phone) {
       display: block;
@@ -716,9 +654,9 @@ h5 {
       bottom: 0;
       top: 0;
       width: 100%;
-      display: block;
+      display: center;
       z-index: 1;
-      border-radius: 0 70px 0 0;
+      border-radius: 70px 70px 0 0;
       position: absolute;
     }
 
@@ -726,7 +664,7 @@ h5 {
       width: 100%;
       z-index: 10;
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       position: relative;
 
       li {
@@ -767,8 +705,10 @@ h5 {
 
         .data-item__content {
           h4 {
-            font-size: 14px;
+            font-size: 24px;
             margin-bottom: 7px;
+            color: var(--color-purple);
+
           }
 
           p {
@@ -781,11 +721,12 @@ h5 {
   }
 
   .page-intro__slide {
-    height: 450px;
+    height: 400px;
     position: relative;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-attachment: fixed;
+    background-size: contain;
     background-color: #fafafa;
 
     @include breakpoint(phone) {
@@ -794,11 +735,10 @@ h5 {
 
     &:before {
       content: "";
-      left: 0;
       z-index: 5;
       width: 100%;
       height: 100%;
-      position: absolute;
+      justify-self: center;
       background-color: rgba(0, 0, 0, 0.2);
     }
 
@@ -806,13 +746,16 @@ h5 {
       z-index: 100;
       display: flex;
       position: relative;
-      align-items: center;
+      justify-content: center;
       height: 100%;
     }
 
     .page-intro__slide__content {
       margin-top: auto;
-      margin-bottom: 40px;
+      padding-top: 20%;
+      margin-bottom: auto;
+      display: center;
+      width: 60%;
 
       @include breakpoint(phone) {
         margin-bottom: 80px;
@@ -834,10 +777,13 @@ h5 {
       h3 {
         font-weight: 600;
         font-size: 40px;
+        align-items: center;
         font-family: Roboto;
         color: #fff;
         margin-bottom: 35px;
         line-height: 150%;
+        display: center;
+
 
         @include breakpoint(phone) {
           font-size: 23px;
@@ -861,7 +807,7 @@ h5 {
           color: #fff;
           font-size: 15px;
           margin-right: 10px;
-          background-color: var(--color-orange);
+          background-color: var(--color-purple);
           border-radius: 100%;
         }
       }
