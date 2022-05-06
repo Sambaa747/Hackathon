@@ -85,11 +85,30 @@ const PageIntro = () => {
                 />
               </form>
             </button>
-            <div style={{display:'flex', flexWrap:'wrap'}}>
+           
+           
+          </div>
+          
+        </div>
+      </div>
+      
+     
+      <div className="shop-data">
+        <div className="container">
+          <ul className="shop-data__items">
+            <li>
+              <div className="data-item__content">
+                <h4>Таны хайсан бүтээгдэхүүн</h4>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div style={{display:'flex', flexWrap:'wrap'}}>
             {
             hi.map(el=>{
                   return(
-                    <Card style={{width:'14rem'}}>
+                    <Card style={{width:'200px'}}>
                     <Card.Img variant="top" src={el.image_link} />
                     <Card.Body>
                       <Card.Title>{el.name}</Card.Title>
@@ -112,7 +131,7 @@ const PageIntro = () => {
             {
             NewTech.map(el=>{
                   return(
-                    <Card style={{width:'14rem'}}>
+                    <Card style={{width:'200px'}}>
                     <Card.Img variant="top" src={el.image_link} />
                     <Card.Body>
                       <Card.Title>{el.name}</Card.Title>
@@ -133,23 +152,6 @@ const PageIntro = () => {
             
             }
             </div>
-           
-          </div>
-          
-        </div>
-      </div>
-      
-     
-      <div className="shop-data">
-        <div className="container">
-          <ul className="shop-data__items">
-            <li>
-              <div className="data-item__content">
-                <h4>Танд санал болгох компьютерийн бүрдлүүд</h4>
-              </div>
-            </li>
-          </ul>
-        </div>
 
         {/* {console.log(weather)} */}
       </div>
